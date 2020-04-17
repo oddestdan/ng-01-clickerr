@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { views } from '../constants';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   username: string;
   count: number = 0;
+  currentView: string = views.INTRO;
 
   catchInputUsernameEvent(username): void {
     if (username) {
@@ -20,11 +22,15 @@ export class AppComponent {
       // -> timeout for 2-3 seconds
     }
 
-    // TODO: initialize game-view
+    // initialize game-view
+    this.currentView = views.GAME;
   }
 
   catchSaveCountEvent(count): void {
     console.log('Caught count:', count);
     this.count = count;
+
+    // initialize result-view
+    this.currentView = views.RESULT;
   }
 }
