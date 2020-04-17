@@ -7,7 +7,7 @@ import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 })
 export class TimerComponent implements OnInit {
   @Input() timer: number;
-  countdownTimer: NodeJS.Timeout = null;
+  countdownTimer: any = null;
 
   @Output() stopGame: EventEmitter<void> = new EventEmitter();
 
@@ -15,7 +15,7 @@ export class TimerComponent implements OnInit {
     this.countdownTimer = this.countdown();
   }
 
-  countdown(): NodeJS.Timeout {
+  countdown(): any {
     return setInterval(() => {
       console.log('Setting timer interval');
       // TODO: change clicker-button styling every second

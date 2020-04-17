@@ -8,16 +8,24 @@ import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 export class GameViewComponent implements OnInit {
   timer: number = 3;
   @Input() count: number;
+  hasStarted: boolean = false;
 
   @Output() saveCount: EventEmitter<number> = new EventEmitter();
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.hasStarted = false;
+  }
 
-  click() {
+  handleStartGameClick() {
+    this.hasStarted = true;
+  }
+
+  handleCountClick() {
     this.count++;
   }
 
   stopGame() {
     this.saveCount.emit(this.count);
+    this.hasStarted = false;
   }
 }

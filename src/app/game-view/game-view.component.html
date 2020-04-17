@@ -3,8 +3,19 @@
     <span>{{ count }}</span>
   </div>
   <div class="game__clicker clicker">
-    <button class="clicker__button" (click)="click()">
-      {{ isStarted ? "click" : "start" }}
+    <button
+      class="clicker__start-button"
+      *ngIf="!hasStarted"
+      (click)="handleStartGameClick()"
+    >
+      start
+    </button>
+    <button
+      class="clicker__click-button"
+      *ngIf="hasStarted"
+      (click)="handleCountClick()"
+    >
+      click
     </button>
   </div>
   <app-timer

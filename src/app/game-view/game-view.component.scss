@@ -17,7 +17,8 @@
 }
 
 .clicker {
-  &__button {
+  &__start-button,
+  &__click-button {
     width: 100px;
     height: 100px;
     border-radius: 50%;
