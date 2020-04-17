@@ -1,0 +1,21 @@
+<div class="game">
+  <div class="game__wrapper" *ngIf="!hasStarted">
+    <button class="game__start" (click)="handleStartGameClick()">
+      start
+    </button>
+  </div>
+
+  <div class="game__wrapper" *ngIf="hasStarted">
+    <div class="game__count">
+      <span>Clicked: {{ count }}</span>
+    </div>
+    <button class="game__clicker" (click)="handleCountClick()">
+      click
+    </button>
+    <app-timer
+      class="game__timer"
+      [timer]="timer"
+      (stopGame)="stopGame()"
+    ></app-timer>
+  </div>
+</div>

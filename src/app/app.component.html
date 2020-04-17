@@ -1,4 +1,22 @@
 <div class="app">
   <app-header class="app__header"></app-header>
-  <app-intro class="app__intro"></app-intro>
+  <div class="app__content" [ngSwitch]="currentView">
+    <app-intro-view
+      *ngSwitchCase="'intro-view'"
+      class="app__intro"
+      (saveUsername)="catchInputUsernameEvent($event)"
+    ></app-intro-view>
+    <app-game-view
+      *ngSwitchCase="'game-view'"
+      class="app__game"
+      [count]="count"
+      (saveCount)="catchSaveCountEvent($event)"
+    ></app-game-view>
+    <app-result-view
+      *ngSwitchCase="'result-view'"
+      class="app__result"
+      [count]="count"
+      [username]="username"
+    ></app-result-view>
+  </div>
 </div>
