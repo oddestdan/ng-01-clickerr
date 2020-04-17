@@ -1,0 +1,15 @@
+<div class="intro">
+  <p>Hey, buddy!</p>
+  <p>Do you mind telling me your name?</p>
+  <div class="intro__input-wrapper">
+    <input
+      class="intro__input"
+      placeholder="Type your name"
+      type="text"
+      [(ngModel)]="username"
+    />
+    <button class="intro__submit" (click)="handleNameClick()">
+      is my name
+    </button>
+  </div>
+</div>
