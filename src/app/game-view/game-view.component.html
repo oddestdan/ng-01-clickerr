@@ -1,0 +1,15 @@
+<div class="game">
+  <div class="game__count">
+    <span>{{ count }}</span>
+  </div>
+  <div class="game__clicker clicker">
+    <button class="clicker__button" (click)="click()">
+      {{ isStarted ? "click" : "start" }}
+    </button>
+  </div>
+  <app-timer
+    class="game__timer"
+    [timer]="timer"
+    (stopGame)="stopGame()"
+  ></app-timer>
+</div>
