@@ -7,9 +7,13 @@ import { views } from '../constants';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  username: string;
+  username: string = 'Alyx Vance';
   count: number = 0;
-  currentView: string = views.INTRO;
+  currentView: string;
+
+  catchEnterGameEvent(): void {
+    this.currentView = views.INTRO;
+  }
 
   catchInputUsernameEvent(username): void {
     if (username) {

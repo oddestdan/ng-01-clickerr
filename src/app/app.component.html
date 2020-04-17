@@ -18,5 +18,11 @@
       [count]="count"
       [username]="username"
     ></app-result-view>
+
+    <app-about-view
+      class="app__about"
+      *ngSwitchDefault
+      (enterGame)="catchEnterGameEvent()"
+    ></app-about-view>
   </div>
 </div>

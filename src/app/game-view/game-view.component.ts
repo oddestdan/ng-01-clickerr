@@ -6,7 +6,7 @@ import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
   styleUrls: ['./game-view.component.scss'],
 })
 export class GameViewComponent implements OnInit {
-  timer: number = 3;
+  timer: number = 10;
   @Input() count: number;
   hasStarted: boolean = false;
 

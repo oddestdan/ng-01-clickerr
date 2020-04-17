@@ -9,6 +9,7 @@ import { ResultViewComponent } from './result-view/result-view.component';
 import { IntroViewComponent } from './intro-view/intro-view.component';
 import { HeaderComponent } from './header/header.component';
 import { TimerComponent } from './timer/timer.component';
+import { AboutViewComponent } from './about-view/about-view.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { TimerComponent } from './timer/timer.component';
     GameViewComponent,
     ResultViewComponent,
     IntroViewComponent,
+    AboutViewComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
