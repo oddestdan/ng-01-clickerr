@@ -12,6 +12,10 @@ export class TimerComponent implements OnInit {
   @Output() stopGame: EventEmitter<void> = new EventEmitter();
 
   ngOnInit(): void {
+    this.startTimer();
+  }
+
+  startTimer(): void {
     this.countdownTimer = this.countdown();
   }
 
@@ -20,7 +24,7 @@ export class TimerComponent implements OnInit {
       console.log('Setting timer interval');
       // TODO: change clicker-button styling every second
 
-      if (this.timer > 0) {
+      if (this.timer > 1) {
         this.timer--;
       } else {
         this.stopTimer();
