@@ -3,11 +3,18 @@
     <button class="game__start" (click)="handleStartGameClick()">
       start
     </button>
+    <select name="timer" id="timer" [(ngModel)]="timer">
+      <option
+        *ngFor="let timerOption of timerOptions"
+        [ngValue]="timerOption"
+        >{{ timerOption }}</option
+      >
+    </select>
   </div>
 
   <div class="game__wrapper" *ngIf="hasStarted">
     <div class="game__count">
-      <span>Clicked: {{ count }}</span>
+      <span>Clicks: {{ count }}</span>
     </div>
     <button class="game__clicker" (click)="handleCountClick()">
       click

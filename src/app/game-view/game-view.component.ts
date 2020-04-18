@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
+import { timerOptions } from '../../constants';
 
 @Component({
   selector: 'app-game-view',
@@ -6,15 +7,14 @@ import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
   styleUrls: ['./game-view.component.scss'],
 })
 export class GameViewComponent implements OnInit {
-  timer: number = 3; // TODO: temporary for dev purposes, change back to 10 later
-  @Input() count: number;
   hasStarted: boolean = false;
+  timerOptions: Array<number> = timerOptions;
+  @Input() timer: number;
+  @Input() count: number;
 
-  @Output() saveCount: EventEmitter<number> = new EventEmitter();
+  @Output() saveCount: EventEmitter<Object> = new EventEmitter();
 
-  ngOnInit(): void {
-    this.hasStarted = false;
-  }
+  ngOnInit(): void {}
 
   handleStartGameClick() {
     this.hasStarted = true;
@@ -25,7 +25,8 @@ export class GameViewComponent implements OnInit {
   }
 
   stopGame() {
-    this.saveCount.emit(this.count);
+    const { count, timer } = this;
+    this.saveCount.emit({ count, timer });
     this.hasStarted = false;
   }
 }
