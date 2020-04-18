@@ -37,4 +37,8 @@ export class AppComponent {
     // initialize result-view
     this.currentView = views.RESULT;
   }
+
+  catchTryAgainEvent(): void {
+    this.currentView = views.GAME;
+  }
 }

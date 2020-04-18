@@ -17,6 +17,7 @@
       class="app__result"
       [count]="count"
       [username]="username"
+      (tryAgain)="catchTryAgainEvent()"
     ></app-result-view>
 
     <app-about-view
