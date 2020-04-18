@@ -4,6 +4,7 @@
     <app-intro-view
       *ngSwitchCase="'intro-view'"
       class="app__intro"
+      [defaultName]="defaultName"
       (saveUsername)="catchInputUsernameEvent($event)"
     ></app-intro-view>
     <app-game-view

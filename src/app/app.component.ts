@@ -8,9 +8,12 @@ import { timerOptions } from '../constants';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  username: string = 'Alyx Vance';
+  username: string;
+  defaultName: string = 'Alyx Vance';
+
   count: number = 0;
   timer: number = timerOptions[0];
+
   currentView: string;
 
   catchEnterGameEvent(): void {
@@ -18,18 +21,18 @@ export class AppComponent {
   }
 
   catchInputUsernameEvent(username): void {
-    if (username) {
-      this.username = username;
+    this.username = username || this.defaultName;
+    // if (username) {
+    // this.username = username;
+    // } else {
+    // this.username = this.defaultName;
+    // TODO: create temporary message:
+    // Alrighty then...
+    // In that case, I'll call you Alyx Vance!
+    // -> timeout for 2-3 seconds
+    // }
 
-      this.currentView = views.GAME;
-    } else {
-      // TODO: create temporary message:
-      // Alrighty then...
-      // In that case, I'll call you Alyx Vance!
-      // -> timeout for 2-3 seconds
-    }
-
-    // this.currentView = views.GAME;
+    this.currentView = views.GAME;
   }
 
   catchSaveCountEvent({ count, timer }): void {

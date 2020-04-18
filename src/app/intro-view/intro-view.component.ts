@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-intro-view',
@@ -7,13 +7,13 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class IntroViewComponent implements OnInit {
   username: string;
+  @Input() defaultName: string;
 
   @Output() saveUsername: EventEmitter<string> = new EventEmitter();
 
   ngOnInit(): void {}
 
   handleNameClick(): void {
-    console.log('Submitting name:', this.username);
     this.saveUsername.emit(this.username);
   }
 }
