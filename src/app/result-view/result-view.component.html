@@ -1,5 +1,12 @@
 <div class="result">
-  <span>Username:{{ username }}</span>
-  <br />
-  <span>Clicks: {{ count }}</span>
+  <p>So, {{ username }}.</p>
+  <p class="result__info">
+    <!-- TODO: When multiple timer variants are created,
+      need to interpolate timer as well  -->
+    You managed to click {{ count }} times in 10 seconds.
+  </p>
+  <p class="result__criteria">
+    {{ criteriaMessage }}
+  </p>
+  <button class="result__again" (click)="handleTryAgainClick()">Yup</button>
 </div>
