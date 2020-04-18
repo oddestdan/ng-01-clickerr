@@ -10,12 +10,14 @@
       *ngSwitchCase="'game-view'"
       class="app__game"
       [count]="count"
+      [timer]="timer"
       (saveCount)="catchSaveCountEvent($event)"
     ></app-game-view>
     <app-result-view
       *ngSwitchCase="'result-view'"
       class="app__result"
       [count]="count"
+      [timer]="timer"
       [username]="username"
       (tryAgain)="catchTryAgainEvent()"
     ></app-result-view>

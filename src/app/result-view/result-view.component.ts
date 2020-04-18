@@ -9,6 +9,7 @@ import { criteria } from '../../constants';
 export class ResultViewComponent implements OnInit {
   criteriaMessage: string;
   @Input() count: number;
+  @Input() timer: number;
   @Input() username: string;
 
   @Output() tryAgain: EventEmitter<void> = new EventEmitter();
@@ -17,25 +18,25 @@ export class ResultViewComponent implements OnInit {
     this.formCriteriaMessage();
   }
 
+  // According to Google:
+  // "On average, most players would easily score 8 - 10 clicks per second."
+  // Therefore, > 11 very good | > 8 good | > 6 decent | > 3 bad | less - very bad
   formCriteriaMessage(): void {
-    // TODO: when multiple timer variants are created,
-    // need to create calculation algorithm for mocked criteria.
-    // For now though, this will do
-    const c = this.count;
+    const cps = Math.ceil(this.count / this.timer); // count per second
     switch (true) {
-      case c >= 20:
+      case cps > 11:
         this.criteriaMessage = criteria.VERY_GOOD;
         break;
-      case c >= 15:
+      case cps > 8:
         this.criteriaMessage = criteria.GOOD;
         break;
-      case c >= 10:
+      case cps > 6:
         this.criteriaMessage = criteria.DECENT;
         break;
-      case c >= 5:
+      case cps > 3:
         this.criteriaMessage = criteria.BAD;
         break;
-      case c >= 0:
+      case cps >= 0:
         this.criteriaMessage = criteria.VERY_BAD;
         break;
 
@@ -46,11 +47,6 @@ export class ResultViewComponent implements OnInit {
   }
 
   handleTryAgainClick(): void {
-    this.resetCount();
     this.tryAgain.emit();
-  }
-
-  resetCount(): void {
-    this.count = 0;
   }
 }

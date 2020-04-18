@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { views } from '../constants';
+import { timerOptions } from '../constants';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,7 @@ import { views } from '../constants';
 export class AppComponent {
   username: string = 'Alyx Vance';
   count: number = 0;
+  timer: number = timerOptions[0];
   currentView: string;
 
   catchEnterGameEvent(): void {
@@ -17,8 +19,9 @@ export class AppComponent {
 
   catchInputUsernameEvent(username): void {
     if (username) {
-      console.log('Caught username:', username);
       this.username = username;
+
+      this.currentView = views.GAME;
     } else {
       // TODO: create temporary message:
       // Alrighty then...
@@ -26,19 +29,21 @@ export class AppComponent {
       // -> timeout for 2-3 seconds
     }
 
-    // initialize game-view
-    this.currentView = views.GAME;
+    // this.currentView = views.GAME;
   }
 
-  catchSaveCountEvent(count): void {
+  catchSaveCountEvent({ count, timer }): void {
     console.log('Caught count:', count);
+    console.log('Caught timer:', timer);
     this.count = count;
+    this.timer = timer;
 
-    // initialize result-view
     this.currentView = views.RESULT;
   }
 
   catchTryAgainEvent(): void {
+    this.count = 0; // reset
+
     this.currentView = views.GAME;
   }
 }
