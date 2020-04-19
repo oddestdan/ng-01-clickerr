@@ -1,11 +1,35 @@
+@import "../../mixins.scss";
+@import "../../palette.scss";
+
 .result {
   font-size: 1.25rem;
   &__info {
     padding: 1rem 0;
   }
+  &__info-text {
+    opacity: 0;
+    @include fadein(1s, 0.5s);
+  }
+  &__username {
+    font-weight: bold;
+    color: $app-orange;
+
+    opacity: 0;
+    @include fadein(1s, 1.2s);
+  }
+  &__info:nth-child(2) {
+    opacity: 0;
+    @include fadein(0.7s, 2.3s);
+  }
+  &__info:nth-child(3) {
+    opacity: 0;
+    @include fadein(0.7s, 4.5s);
+  }
   &__again {
     width: 100%;
     display: flex;
     justify-content: center;
+    opacity: 0;
+    @include fadein(1s, 6.7s);
   }
 }

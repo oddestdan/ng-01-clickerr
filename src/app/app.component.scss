@@ -1,6 +1,8 @@
+@import "../palette.scss";
+
 .app {
-  background-color: #302d2d;
-  color: #eee8e8;
+  background-color: $app-dark;
+  color: $app-light;
   font-size: 16px;
 
   width: 100vw;

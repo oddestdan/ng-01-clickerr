@@ -1,8 +1,15 @@
+@import "../../mixins.scss";
+@import "../../palette.scss";
+
 .game {
   font-size: 1.25rem;
-  &__count-value {
+  &__count {
+    opacity: 0;
+    @include fadein(0.7s, 0.7s);
+  }
+  &__clicks-count {
     font-weight: bold;
-    color: #e64124;
+    color: $app-orange;
   }
   &__timer-choose {
     margin-right: 2rem;
@@ -16,6 +23,8 @@
   }
   &__timer-wrapper {
     display: flex;
+    opacity: 0;
+    @include fadein(0.7s, 1.4s);
   }
 
   /*** Round Button component ***/
@@ -26,19 +35,20 @@
     width: 10rem;
     height: 10rem;
     border-radius: 50%;
-    background-color: #e64124d7;
-    color: #e6e0e0;
+    background-color: $app-orange;
+    color: $app-light;
     text-transform: uppercase;
     font-weight: bold;
     font-size: 1.25rem;
 
     transition: background-color 0.2s ease-in-out;
     &:hover {
-      background-color: #e64124;
+      background-color: $app-orange;
     }
   }
-  &__clicker {
-    background-color: #e64124;
+  &__starter {
+    @include fadein(1.5s);
+    background-color: $app-orangedark;
   }
 }
 
@@ -48,7 +58,7 @@
   cursor: pointer;
   font-size: 1.25rem;
   font-weight: bold;
-  color: #eee8e8;
+  color: $app-light;
   // padding: 0.25rem 1rem;
   padding: 0 1rem;
   box-sizing: border-box;
@@ -63,15 +73,15 @@
     display: none;
   }
   &:hover {
-    background-color: #eee8e8;
-    border-color: #3cefff;
-    color: #302d2d;
+    background-color: $app-light;
+    border-color: $app-cyan;
+    color: $app-dark;
   }
   &:focus {
     outline: none;
-    color: #302d2d;
+    color: $app-dark;
     border-color: transparent;
-    background-color: #eee8e8;
+    background-color: $app-light;
   }
   &__option {
     font-weight: normal;
