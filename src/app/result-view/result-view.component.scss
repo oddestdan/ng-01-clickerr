@@ -1,4 +1,5 @@
 @import "../../mixins.scss";
+@import "../../palette.scss";
 
 .result {
   font-size: 1.25rem;
@@ -11,7 +12,7 @@
   }
   &__username {
     font-weight: bold;
-    color: #e64124;
+    color: $app-orange;
 
     opacity: 0;
     @include fadein(1s, 1.2s);

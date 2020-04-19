@@ -1,4 +1,5 @@
 @import "../../mixins.scss";
+@import "../../palette.scss";
 
 .about {
   font-size: 1.25rem;
@@ -10,7 +11,7 @@
   }
   &__welcome-title {
     opacity: 0;
-    color: #e64124;
+    color: $app-orange;
     @include fadein(0.7s, 0.8s);
   }
   &__paragraph {

@@ -1,7 +1,9 @@
+@import "../../palette.scss";
+
 .timer {
   font-size: 1.25rem;
   &__value {
     font-weight: bold;
-    color: #e64124;
+    color: $app-orange;
   }
 }
