@@ -14,6 +14,9 @@
     justify-content: space-around;
     align-items: center;
   }
+  &__timer-wrapper {
+    display: flex;
+  }
 
   /*** Round Button component ***/
   &__action {
@@ -36,5 +39,40 @@
   }
   &__clicker {
     background-color: #e64124;
+  }
+}
+
+/*** Custom Select component ***/
+// (Reeeeally bad, TODO: need to find a better alternative later)
+.timer-select {
+  cursor: pointer;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #eee8e8;
+  padding: 0.25rem 1rem;
+  box-sizing: border-box;
+  border: none;
+  appearance: none;
+  background-color: transparent;
+
+  border-top: 3px solid #eee8e8;
+  transition: all 0.3s ease-in-out;
+
+  &::-ms-expand {
+    display: none;
+  }
+  &:hover {
+    background-color: #eee8e8;
+    border-color: #3cefff;
+    color: #302d2d;
+  }
+  &:focus {
+    outline: none;
+    color: #302d2d;
+    border-color: transparent;
+    background-color: #eee8e8;
+  }
+  &__option {
+    font-weight: normal;
   }
 }

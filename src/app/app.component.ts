@@ -13,7 +13,7 @@ export class AppComponent {
   defaultName: string = 'Alyx Vance';
 
   count: number = 0;
-  timer: number = timerOptions[0];
+  timer: number = timerOptions[1];
 
   currentView: string;
 
