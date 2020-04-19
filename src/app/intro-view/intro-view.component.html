@@ -5,12 +5,11 @@
     just call you <b>Alyx Vance</b> then).
   </p>
   <div class="intro__input-wrapper">
-    <input
+    <app-custom-input
       class="intro__input"
-      placeholder="{{ defaultName }}"
-      type="text"
-      [(ngModel)]="username"
-    />
+      [placeholder]="defaultName"
+      [(inputModel)]="username"
+    ></app-custom-input>
     <app-action-button
       class="intro__submit"
       [value]="'is my name'"
