@@ -1,6 +1,9 @@
 <div class="intro">
   <p>Alright!</p>
-  <p>First off, do you mind telling me your name?</p>
+  <p>
+    First off, do you mind telling me your name? (It's fine if you don't, I'll
+    just call you <b>Alyx Vance</b> then).
+  </p>
   <div class="intro__input-wrapper">
     <input
       class="intro__input"
@@ -8,8 +11,11 @@
       type="text"
       [(ngModel)]="username"
     />
-    <button class="intro__submit" (click)="handleNameClick()">
-      is my name
-    </button>
+    <app-action-button
+      class="intro__submit"
+      [value]="'is my name'"
+      (onClick)="handleNameClick($event)"
+    >
+    </app-action-button>
   </div>
 </div>

@@ -13,7 +13,7 @@ export class IntroViewComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  handleNameClick(): void {
+  handleNameClick(_): void {
     this.saveUsername.emit(this.username);
   }
 }

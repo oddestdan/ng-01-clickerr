@@ -8,6 +8,7 @@ import { timerOptions } from '../constants';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+  title: string = 'clickerr';
   username: string;
   defaultName: string = 'Alyx Vance';
 
@@ -35,6 +36,7 @@ export class AppComponent {
     this.currentView = views.GAME;
   }
 
+  // TODO: rename to SaveResult (more logical)
   catchSaveCountEvent({ count, timer }): void {
     console.log('Caught count:', count);
     console.log('Caught timer:', timer);

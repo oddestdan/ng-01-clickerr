@@ -1,13 +1,19 @@
 <div class="about">
-  <h2 class="about__welcome">Hello there, and welcome to <em>Clickerr</em></h2>
+  <h2 class="about__welcome">
+    Hello there, and welcome to
+    <span class="about__welcome-title">{{ title }}.</span>
+  </h2>
   <p class="about__paragraph">
     This game tests how mighty and fast your fingers are,
-    <b>so be prepared</b>.
+    <b>so be prepared</b>. It will test your <b>CPS (Count per Second)</b> using
+    your mouse or touchpad clicks.
   </p>
   <p class="about__paragraph">
-    <em>Ready to start?</em
-    ><button class="about__enter" (click)="handleEnterGameClick()">
-      I'm in
-    </button>
+    <span class="about__ready"><em>Ready to start?</em></span>
+    <app-action-button
+      class="about__enter"
+      [value]="'I\'m in'"
+      (onClick)="handleEnterGameClick($event)"
+    ></app-action-button>
   </p>
 </div>

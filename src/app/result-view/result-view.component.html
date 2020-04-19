@@ -1,11 +1,16 @@
 <div class="result">
-  <p>So, {{ username }}.</p>
+  <p class="result__info">So, {{ username }}.</p>
   <p class="result__info">
-    You managed to click {{ count }} times in {{ timer }} seconds. So, your CPS
-    (Count per Second) is {{ count / timer }}
+    You managed to click {{ count }} times in {{ timer }} seconds. So, your
+    <b>CPS</b> (Count per Second) is <b>{{ count / timer }}</b>
   </p>
-  <p class="result__criteria">
+  <p class="result__info">
     {{ criteriaMessage }}
   </p>
-  <button class="result__again" (click)="handleTryAgainClick()">Yup</button>
+  <app-action-button
+    class="result__again"
+    [value]="'Yup.'"
+    (onClick)="handleTryAgainClick($event)"
+  >
+  </app-action-button>
 </div>

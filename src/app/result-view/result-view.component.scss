@@ -1,13 +1,11 @@
 .result {
-  &__intro {
-    //
+  font-size: 1.25rem;
+  &__info {
+    padding: 1rem 0;
   }
-
-  &__criteria {
-    //
-  }
-
   &__again {
-    //
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
 }

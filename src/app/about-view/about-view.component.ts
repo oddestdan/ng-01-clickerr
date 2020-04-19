@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-about-view',
@@ -6,11 +6,12 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./about-view.component.scss'],
 })
 export class AboutViewComponent implements OnInit {
+  @Input() title: string;
   @Output() enterGame: EventEmitter<void> = new EventEmitter();
 
   ngOnInit(): void {}
 
-  handleEnterGameClick(): void {
+  handleEnterGameClick(_): void {
     this.enterGame.emit();
   }
 }

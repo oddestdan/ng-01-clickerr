@@ -46,7 +46,7 @@ export class ResultViewComponent implements OnInit {
     }
   }
 
-  handleTryAgainClick(): void {
+  handleTryAgainClick(_): void {
     this.tryAgain.emit();
   }
 }
