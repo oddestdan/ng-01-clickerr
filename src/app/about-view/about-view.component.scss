@@ -1,18 +1,29 @@
+@import "../../mixins.scss";
+
 .about {
   font-size: 1.25rem;
   &__welcome {
     font-size: 2.5rem;
   }
+  &__welcome-text {
+    @include fadein(2s);
+  }
   &__welcome-title {
+    opacity: 0;
     color: #e64124;
+    @include fadein(0.7s, 0.8s);
   }
   &__paragraph {
+    opacity: 0;
     padding: 1rem 0;
+  }
+  &__paragraph:nth-child(2) {
+    @include fadein(0.7s, 1.6s);
+  }
+  &__paragraph:nth-child(3) {
+    @include fadein(0.7s, 3.2s);
   }
   &__ready {
     margin-right: 2rem;
-  }
-  &__enter {
-    //
   }
 }

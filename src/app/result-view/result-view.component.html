@@ -1,5 +1,8 @@
 <div class="result">
-  <p class="result__info">So, {{ username }}.</p>
+  <p class="result__info">
+    <span class="result__info-text">So, </span>
+    <span class="result__username">{{ username }}.</span>
+  </p>
   <p class="result__info">
     You managed to click {{ count }} times in {{ timer }} seconds. So, your
     <b>CPS</b> (Count per Second) is <b>{{ (count / timer).toFixed(2) }}</b>

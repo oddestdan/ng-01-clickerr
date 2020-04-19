@@ -1,6 +1,12 @@
+@import "../../mixins.scss";
+
 .game {
   font-size: 1.25rem;
-  &__count-value {
+  &__count {
+    opacity: 0;
+    @include fadein(0.7s, 0.7s);
+  }
+  &__clicks-count {
     font-weight: bold;
     color: #e64124;
   }
@@ -16,6 +22,8 @@
   }
   &__timer-wrapper {
     display: flex;
+    opacity: 0;
+    @include fadein(0.7s, 1.4s);
   }
 
   /*** Round Button component ***/
@@ -26,7 +34,7 @@
     width: 10rem;
     height: 10rem;
     border-radius: 50%;
-    background-color: #e64124d7;
+    background-color: #e64124;
     color: #e6e0e0;
     text-transform: uppercase;
     font-weight: bold;
@@ -37,8 +45,9 @@
       background-color: #e64124;
     }
   }
-  &__clicker {
-    background-color: #e64124;
+  &__starter {
+    @include fadein(1.5s);
+    background-color: #e64124d7;
   }
 }
 

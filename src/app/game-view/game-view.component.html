@@ -1,13 +1,13 @@
 <div class="game">
   <div class="game__wrapper" *ngIf="!hasStarted">
     <div class="game__count">
-      Your click count...
+      Your click count ...
     </div>
-    <button class="game__action" (click)="handleStartGameClick()">
+    <button class="game__action game__starter" (click)="handleStartGameClick()">
       start!
     </button>
     <div class="game__timer-wrapper">
-      <span class="game__timer-choose">Timer</span>
+      <span class="game__timer-choose">Your timer ...</span>
       <select
         class="game__timer-select timer-select"
         name="timer"
@@ -25,8 +25,8 @@
   </div>
 
   <div class="game__wrapper" *ngIf="hasStarted">
-    <div class="game__count">
-      Clicks: <span class="game__count-value">{{ count }}</span>
+    <div class="game__clicks">
+      Clicks: <span class="game__clicks-count">{{ count }}</span>
     </div>
     <button class="game__action game__clicker" (click)="handleCountClick()">
       click!
