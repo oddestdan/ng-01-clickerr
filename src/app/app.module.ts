@@ -10,6 +10,8 @@ import { IntroViewComponent } from './intro-view/intro-view.component';
 import { HeaderComponent } from './header/header.component';
 import { TimerComponent } from './timer/timer.component';
 import { AboutViewComponent } from './about-view/about-view.component';
+import { ActionButtonComponent } from './components/action-button/action-button.component';
+import { CustomInputComponent } from './components/custom-input/custom-input.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { AboutViewComponent } from './about-view/about-view.component';
     ResultViewComponent,
     IntroViewComponent,
     AboutViewComponent,
+    ActionButtonComponent,
+    CustomInputComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

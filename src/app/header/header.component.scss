@@ -2,4 +2,9 @@
   position: absolute;
   top: 1rem;
   left: 1rem;
+
+  &__title {
+    font-weight: bold;
+    color: #e64124;
+  }
 }

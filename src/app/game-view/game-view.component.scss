@@ -1,33 +1,79 @@
 .game {
-  //
-
-  &__count {
-    //
+  font-size: 1.25rem;
+  &__count-value {
+    font-weight: bold;
+    color: #e64124;
   }
-
-  &__clicker {
-    //
+  &__timer-choose {
+    margin-right: 2rem;
   }
-
-  &__timer {
-    //
-  }
-
   &__wrapper {
+    height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     align-items: center;
   }
+  &__timer-wrapper {
+    display: flex;
+  }
 
-  &__start,
-  &__clicker {
-    width: 100px;
-    height: 100px;
+  /*** Round Button component ***/
+  &__action {
+    cursor: pointer;
+    border: none;
+
+    width: 10rem;
+    height: 10rem;
     border-radius: 50%;
-    background-color: #e64124;
+    background-color: #e64124d7;
     color: #e6e0e0;
     text-transform: uppercase;
     font-weight: bold;
-    cursor: pointer;
+    font-size: 1.25rem;
+
+    transition: background-color 0.2s ease-in-out;
+    &:hover {
+      background-color: #e64124;
+    }
+  }
+  &__clicker {
+    background-color: #e64124;
+  }
+}
+
+/*** Custom Select component ***/
+// (Reeeeally bad, TODO: need to find a better alternative later)
+.timer-select {
+  cursor: pointer;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #eee8e8;
+  // padding: 0.25rem 1rem;
+  padding: 0 1rem;
+  box-sizing: border-box;
+  border: none;
+  appearance: none;
+  background-color: transparent;
+
+  border-top: 3px solid #eee8e8;
+  transition: all 0.3s ease-in-out;
+
+  &::-ms-expand {
+    display: none;
+  }
+  &:hover {
+    background-color: #eee8e8;
+    border-color: #3cefff;
+    color: #302d2d;
+  }
+  &:focus {
+    outline: none;
+    color: #302d2d;
+    border-color: transparent;
+    background-color: #eee8e8;
+  }
+  &__option {
+    font-weight: normal;
   }
 }
