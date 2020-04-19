@@ -1,11 +1,8 @@
 @import "../../palette.scss";
 
-.header {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-
-  &__title {
+.timer {
+  font-size: 1.25rem;
+  &__value {
     font-weight: bold;
     color: $app-orange;
   }

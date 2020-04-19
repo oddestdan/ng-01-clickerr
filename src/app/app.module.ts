@@ -4,21 +4,29 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { GameViewComponent } from './game-view/game-view.component';
+import { ResultViewComponent } from './result-view/result-view.component';
+import { IntroViewComponent } from './intro-view/intro-view.component';
 import { HeaderComponent } from './header/header.component';
-import { IntroComponent } from './intro/intro.component';
+import { TimerComponent } from './timer/timer.component';
+import { AboutViewComponent } from './about-view/about-view.component';
+import { ActionButtonComponent } from './components/action-button/action-button.component';
+import { CustomInputComponent } from './components/custom-input/custom-input.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    IntroComponent
+    TimerComponent,
+    GameViewComponent,
+    ResultViewComponent,
+    IntroViewComponent,
+    AboutViewComponent,
+    ActionButtonComponent,
+    CustomInputComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

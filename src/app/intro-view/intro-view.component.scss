@@ -1,0 +1,24 @@
+@import "../../mixins.scss";
+
+.intro {
+  font-size: 1.25rem;
+
+  &__paragraph {
+    opacity: 0;
+    padding: 1rem 0;
+  }
+  &__paragraph:nth-child(1) {
+    @include fadein(1s);
+  }
+  &__paragraph:nth-child(2) {
+    @include fadein(1s, 0.6s);
+  }
+
+  &__input-wrapper {
+    opacity: 0;
+    @include fadein(1s, 1.8s);
+  }
+  &__input {
+    margin-right: 2rem;
+  }
+}

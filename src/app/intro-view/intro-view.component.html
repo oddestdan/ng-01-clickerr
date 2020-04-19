@@ -1,0 +1,20 @@
+<div class="intro">
+  <p class="intro__paragraph"><b>Alright!</b></p>
+  <p class="intro__paragraph">
+    First off, do you mind telling me your name? (It's fine if you don't, I'll
+    just call you <b>Alyx Vance</b> then).
+  </p>
+  <div class="intro__input-wrapper">
+    <app-custom-input
+      class="intro__input"
+      [placeholder]="defaultName"
+      [(inputModel)]="username"
+    ></app-custom-input>
+    <app-action-button
+      class="intro__submit"
+      [value]="'is my name'"
+      (onClick)="handleNameClick($event)"
+    >
+    </app-action-button>
+  </div>
+</div>

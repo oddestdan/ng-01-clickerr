@@ -1,0 +1,14 @@
+@mixin fadein($time, $delay: 0) {
+  animation: fadein $time;
+  animation-delay: $delay;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

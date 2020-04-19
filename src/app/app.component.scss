@@ -1,8 +1,20 @@
-.app {
-  height: 100vh;
-  width: 100vw;
+@import "../palette.scss";
 
+.app {
+  background-color: $app-dark;
+  color: $app-light;
+  font-size: 16px;
+
+  width: 100vw;
   display: flex;
   justify-content: center;
-  align-items: center;
+
+  &__content {
+    min-height: 100vh;
+    width: 70%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }

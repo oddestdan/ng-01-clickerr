@@ -1,0 +1,10 @@
+<div class="custom-input__wrapper">
+  <input
+    class="custom-input"
+    placeholder="{{ placeholder }}"
+    type="text"
+    [(ngModel)]="inputModel"
+    (ngModelChange)="inputModelChange.emit(inputModel)"
+  />
+  <span class="custom-input__underline"></span>
+</div>
