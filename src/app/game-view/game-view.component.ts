@@ -7,12 +7,12 @@ import { timerOptions } from '../../constants';
   styleUrls: ['./game-view.component.scss'],
 })
 export class GameViewComponent implements OnInit {
-  hasStarted: boolean = false;
+  hasStarted = false;
   timerOptions: Array<number> = timerOptions;
   @Input() timer: number;
   @Input() count: number;
 
-  @Output() saveCount: EventEmitter<Object> = new EventEmitter();
+  @Output() saveResult: EventEmitter<Object> = new EventEmitter();
 
   ngOnInit(): void {}
 
@@ -26,7 +26,7 @@ export class GameViewComponent implements OnInit {
 
   stopGame() {
     const { count, timer } = this;
-    this.saveCount.emit({ count, timer });
+    this.saveResult.emit({ count, timer });
     this.hasStarted = false;
   }
 }

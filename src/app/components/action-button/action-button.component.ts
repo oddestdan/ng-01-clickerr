@@ -7,11 +7,11 @@ import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 })
 export class ActionButtonComponent implements OnInit {
   @Input() value: string;
-  @Output() onClick: EventEmitter<any> = new EventEmitter();
+  @Output() click: EventEmitter<any> = new EventEmitter();
 
   ngOnInit(): void {}
 
   clickHandler(event): void {
-    this.onClick.emit(event);
+    this.click.emit(event);
   }
 }
