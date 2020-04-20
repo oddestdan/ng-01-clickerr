@@ -8,11 +8,11 @@ import { timerOptions } from '../constants';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title: string = 'clickerr';
+  title = 'clickerr';
   username: string;
-  defaultName: string = 'Alyx Vance';
+  defaultName = 'Alyx Vance';
 
-  count: number = 0;
+  count = 0;
   timer: number = timerOptions[1];
 
   currentView: string;
@@ -21,7 +21,7 @@ export class AppComponent {
     this.currentView = views.INTRO;
   }
 
-  catchInputUsernameEvent(username): void {
+  catchInputUsernameEvent(username: string): void {
     this.username = username || this.defaultName;
     // if (username) {
     // this.username = username;
@@ -36,10 +36,7 @@ export class AppComponent {
     this.currentView = views.GAME;
   }
 
-  // TODO: rename to SaveResult (more logical)
-  catchSaveCountEvent({ count, timer }): void {
-    console.log('Caught count:', count);
-    console.log('Caught timer:', timer);
+  catchSaveResultEvent({ count, timer }): void {
     this.count = count;
     this.timer = timer;
 

@@ -7,7 +7,7 @@ import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 })
 export class TimerComponent implements OnInit {
   @Input() timer: number;
-  countdownTimer: any = null;
+  countdownTimer: any;
 
   @Output() stopGame: EventEmitter<void> = new EventEmitter();
 

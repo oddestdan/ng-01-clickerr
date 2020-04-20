@@ -30,6 +30,6 @@
     display: flex;
     justify-content: center;
     opacity: 0;
-    @include fadein(1s, 6.7s);
+    @include fadein(0.7s, 5.7s);
   }
 }
