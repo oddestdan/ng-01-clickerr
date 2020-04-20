@@ -12,7 +12,7 @@
       class="app__game"
       [count]="count"
       [timer]="timer"
-      (saveCount)="catchSaveCountEvent($event)"
+      (saveResult)="catchSaveResultEvent($event)"
     ></app-game-view>
     <app-result-view
       *ngSwitchCase="'result-view'"
