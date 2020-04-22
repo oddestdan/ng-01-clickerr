@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 import { criteria } from '../../constants';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-result-view',
@@ -11,8 +12,9 @@ export class ResultViewComponent implements OnInit {
   @Input() count: number;
   @Input() timer: number;
   @Input() username: string;
-
   @Output() tryAgain: EventEmitter<void> = new EventEmitter();
+
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
     this.formCriteriaMessage();
@@ -48,5 +50,6 @@ export class ResultViewComponent implements OnInit {
 
   handleTryAgainClick(_): void {
     this.tryAgain.emit();
+    this.router.navigateByUrl('/game');
   }
 }
