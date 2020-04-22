@@ -1,0 +1,18 @@
+@import "../../palette.scss";
+
+.not-found {
+  &__400 {
+    font-size: 8rem;
+    margin: 0;
+  }
+  &__message {
+    font-size: 2rem;
+  }
+  &__link {
+    font-size: 2rem;
+    color: $app-orange;
+    &:hover {
+      color: $app-orangedark;
+    }
+  }
+}
