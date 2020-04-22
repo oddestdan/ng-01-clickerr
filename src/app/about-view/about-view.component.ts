@@ -1,4 +1,6 @@
 import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
+import { GameDataService } from '../services/game-data.service';
 
 @Component({
   selector: 'app-about-view',
@@ -6,12 +8,18 @@ import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
   styleUrls: ['./about-view.component.scss'],
 })
 export class AboutViewComponent implements OnInit {
-  @Input() title: string;
-  @Output() enterGame: EventEmitter<void> = new EventEmitter();
+  title: string;
 
-  ngOnInit(): void {}
+  constructor(
+    private router: Router,
+    private gameDataService: GameDataService
+  ) {}
+
+  ngOnInit(): void {
+    this.title = this.gameDataService.title;
+  }
 
   handleEnterGameClick(_): void {
-    this.enterGame.emit();
+    this.router.navigateByUrl('/intro');
   }
 }

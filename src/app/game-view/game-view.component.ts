@@ -1,5 +1,7 @@
 import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 import { timerOptions } from '../../constants';
+import { Router } from '@angular/router';
+import { GameDataService } from '../services/game-data.service';
 
 @Component({
   selector: 'app-game-view',
@@ -9,10 +11,13 @@ import { timerOptions } from '../../constants';
 export class GameViewComponent implements OnInit {
   hasStarted = false;
   timerOptions: Array<number> = timerOptions;
-  @Input() timer: number;
-  @Input() count: number;
+  timer = timerOptions[1];
+  count = 0;
 
-  @Output() saveResult: EventEmitter<Object> = new EventEmitter();
+  constructor(
+    private router: Router,
+    private gameDataService: GameDataService
+  ) {}
 
   ngOnInit(): void {}
 
@@ -25,8 +30,10 @@ export class GameViewComponent implements OnInit {
   }
 
   stopGame() {
-    const { count, timer } = this;
-    this.saveResult.emit({ count, timer });
     this.hasStarted = false;
+    this.gameDataService.count = this.count;
+    this.gameDataService.timer = this.timer;
+
+    this.router.navigateByUrl('/result');
   }
 }

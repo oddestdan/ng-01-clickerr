@@ -1,5 +1,7 @@
 import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 import { criteria } from '../../constants';
+import { Router } from '@angular/router';
+import { GameDataService } from '../services/game-data.service';
 
 @Component({
   selector: 'app-result-view',
@@ -8,13 +10,20 @@ import { criteria } from '../../constants';
 })
 export class ResultViewComponent implements OnInit {
   criteriaMessage: string;
-  @Input() count: number;
-  @Input() timer: number;
-  @Input() username: string;
+  count: number;
+  timer: number;
+  username: string;
 
-  @Output() tryAgain: EventEmitter<void> = new EventEmitter();
+  constructor(
+    private router: Router,
+    private gameDataService: GameDataService
+  ) {}
 
   ngOnInit(): void {
+    this.count = this.gameDataService.count;
+    this.timer = this.gameDataService.timer;
+    this.username = this.gameDataService.username;
+
     this.formCriteriaMessage();
   }
 
@@ -22,7 +31,7 @@ export class ResultViewComponent implements OnInit {
   // "On average, most players would easily score 8 - 10 clicks per second."
   // Therefore, > 11 very good | > 8 good | > 6 decent | > 3 bad | less - very bad
   formCriteriaMessage(): void {
-    const cps = Math.ceil(this.count / this.timer); // count per second
+    const cps = Math.ceil(this.count / this.timer); // clicks per second
     switch (true) {
       case cps > 11:
         this.criteriaMessage = criteria.VERY_GOOD;
@@ -47,6 +56,8 @@ export class ResultViewComponent implements OnInit {
   }
 
   handleTryAgainClick(_): void {
-    this.tryAgain.emit();
+    this.gameDataService.count = 0;
+
+    this.router.navigateByUrl('/game');
   }
 }

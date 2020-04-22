@@ -21,8 +21,7 @@ export class TimerComponent implements OnInit {
 
   countdown(): any {
     return setInterval(() => {
-      console.log('Setting timer interval');
-      // TODO: change clicker-button styling every second
+      // TODO: for hard mode, change clicker-button styling every second
 
       if (this.timer > 1) {
         this.timer--;
