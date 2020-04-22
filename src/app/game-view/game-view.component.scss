@@ -4,12 +4,11 @@
 .game {
   font-size: 1.25rem;
   &__count {
-    opacity: 0;
     @include fadein(0.7s, 0.7s);
   }
   &__clicks-count {
     font-weight: bold;
-    color: $app-orange;
+    color: $app-primary;
   }
   &__timer-choose {
     margin-right: 2rem;
@@ -23,7 +22,6 @@
   }
   &__timer-wrapper {
     display: flex;
-    opacity: 0;
     @include fadein(0.7s, 1.4s);
   }
 
@@ -35,20 +33,26 @@
     width: 10rem;
     height: 10rem;
     border-radius: 50%;
-    background-color: $app-orange;
+    background-color: $app-primary;
     color: $app-light;
     text-transform: uppercase;
     font-weight: bold;
     font-size: 1.25rem;
 
-    transition: background-color 0.2s ease-in-out;
+    transition: background-color 0.1s ease-in-out;
     &:hover {
-      background-color: $app-orange;
+      background-color: $app-primary;
+    }
+    &:active {
+      background-color: $app-primary-dark;
+    }
+    &:focus {
+      outline: $app-primary auto 0px;
     }
   }
   &__starter {
     @include fadein(1.5s);
-    background-color: $app-orangedark;
+    background-color: $app-primary-dark;
   }
 }
 
@@ -74,7 +78,6 @@
   }
   &:hover {
     background-color: $app-light;
-    border-color: $app-cyan;
     color: $app-dark;
   }
   &:focus {

@@ -28,18 +28,18 @@ export class ResultViewComponent implements OnInit {
   }
 
   // According to Google:
-  // "On average, most players would easily score 8 - 10 clicks per second."
-  // Therefore, > 11 very good | > 8 good | > 6 decent | > 3 bad | less - very bad
+  // "On average, most players would easily score up to 8 - 10 clicks per second."
+  // Therefore, > 9 very good | > 7 good | > 5 decent | > 3 bad | less - very bad
   formCriteriaMessage(): void {
     const cps = Math.ceil(this.count / this.timer); // clicks per second
     switch (true) {
-      case cps > 11:
+      case cps > 9:
         this.criteriaMessage = criteria.VERY_GOOD;
         break;
-      case cps > 8:
+      case cps > 7:
         this.criteriaMessage = criteria.GOOD;
         break;
-      case cps > 6:
+      case cps > 5:
         this.criteriaMessage = criteria.DECENT;
         break;
       case cps > 3:

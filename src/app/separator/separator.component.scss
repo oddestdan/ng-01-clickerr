@@ -1,0 +1,9 @@
+@import "../../palette.scss";
+
+.separator {
+  display: inline-block;
+  background-color: $app-medium;
+  width: 100%;
+  height: 2px;
+  margin: 2rem 0;
+}

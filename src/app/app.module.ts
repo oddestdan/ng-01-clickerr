@@ -13,6 +13,7 @@ import { AboutViewComponent } from './about-view/about-view.component';
 import { ActionButtonComponent } from './components/action-button/action-button.component';
 import { CustomInputComponent } from './components/custom-input/custom-input.component';
 import { NotFoundViewComponent } from './not-found-view/not-found-view.component';
+import { SeparatorComponent } from './separator/separator.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { NotFoundViewComponent } from './not-found-view/not-found-view.component
     ActionButtonComponent,
     CustomInputComponent,
     NotFoundViewComponent,
+    SeparatorComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
