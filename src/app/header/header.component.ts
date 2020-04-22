@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { GameDataService } from '../services/game-data.service';
 
 @Component({
   selector: 'app-header',
@@ -6,7 +7,11 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  @Input() title: string;
+  title: string;
 
-  ngOnInit(): void {}
+  constructor(private gameDataService: GameDataService) {}
+
+  ngOnInit(): void {
+    this.title = this.gameDataService.title;
+  }
 }
