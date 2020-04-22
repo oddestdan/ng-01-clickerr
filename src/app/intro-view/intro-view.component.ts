@@ -1,5 +1,6 @@
-import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { GameDataService } from '../services/game-data.service';
 
 @Component({
   selector: 'app-intro-view',
@@ -8,16 +9,20 @@ import { Router } from '@angular/router';
 })
 export class IntroViewComponent implements OnInit {
   username: string;
-  @Input() defaultName: string;
-  @Output() saveUsername: EventEmitter<string> = new EventEmitter();
+  defaultName: string;
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private gameDataService: GameDataService
+  ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.defaultName = this.gameDataService.defaultName;
+  }
 
   handleNameClick(_): void {
-    this.saveUsername.emit(this.username);
-    // TODO: save username in between using services
+    this.gameDataService.username = this.username;
+
     this.router.navigateByUrl('/game');
   }
 }

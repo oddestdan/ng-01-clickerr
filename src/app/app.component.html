@@ -1,35 +1,6 @@
 <div class="app">
-  <app-header class="app__header" [title]="title"></app-header>
+  <app-header class="app__header"></app-header>
   <div class="app__content">
     <router-outlet></router-outlet>
-    <!-- <app-intro-view
-      *ngSwitchCase="'intro-view'"
-      class="app__intro"
-      [defaultName]="defaultName"
-      (saveUsername)="catchInputUsernameEvent($event)"
-    ></app-intro-view>
-    <app-game-view
-      *ngSwitchCase="'game-view'"
-      class="app__game"
-      [count]="count"
-      [timer]="timer"
-      (saveResult)="catchSaveResultEvent($event)"
-    ></app-game-view>
-    <app-result-view
-      *ngSwitchCase="'result-view'"
-      class="app__result"
-      [count]="count"
-      [timer]="timer"
-      [username]="username"
-      (tryAgain)="catchTryAgainEvent()"
-    ></app-result-view>
-
-    <app-about-view
-      *ngSwitchDefault
-      class="app__about"
-      [title]="title"
-      (enterGame)="catchEnterGameEvent()"
-    ></app-about-view>
-  </div> -->
   </div>
 </div>
