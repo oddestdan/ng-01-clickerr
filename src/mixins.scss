@@ -1,4 +1,5 @@
 @mixin fadein($time, $delay: 0) {
+  opacity: 0;
   animation: fadein $time;
   animation-delay: $delay;
   animation-fill-mode: forwards;

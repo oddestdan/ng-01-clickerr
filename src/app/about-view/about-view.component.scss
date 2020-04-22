@@ -10,19 +10,19 @@
     @include fadein(2s);
   }
   &__welcome-title {
-    opacity: 0;
-    color: $app-orange;
+    color: $app-primary;
     @include fadein(0.7s, 0.8s);
   }
-  &__paragraph {
-    opacity: 0;
+  &__info {
     padding: 1rem 0;
-  }
-  &__paragraph:nth-child(2) {
     @include fadein(0.7s, 1.6s);
   }
-  &__paragraph:nth-child(3) {
-    @include fadein(0.7s, 3.2s);
+  &__separator {
+    @include fadein(0.5s, 3s);
+  }
+  &__prompt {
+    // padding: 1rem 0;
+    @include fadein(0.5s, 3.2s);
   }
   &__ready {
     margin-right: 2rem;
