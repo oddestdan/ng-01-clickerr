@@ -1,7 +1,10 @@
 @import "../palette.scss";
 
 .app {
-  background-color: $app-dark;
+  background: linear-gradient(12deg, $app-dark, $app-medium);
+  background-size: 400% 400%;
+  animation: flow 10s ease infinite;
+
   color: $app-light;
   font-size: 16px;
 
@@ -16,5 +19,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+}
+
+@keyframes flow {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
   }
 }
