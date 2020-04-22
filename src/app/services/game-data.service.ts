@@ -6,8 +6,8 @@ import { Injectable } from '@angular/core';
 export class GameDataService {
   private _title = 'clickerr';
   private _defaultName = 'Alyx Vance';
+  // Would need to set default values due to issues with manual re-routing
   private _username: string;
-
   private _count: number;
   private _timer: number;
 

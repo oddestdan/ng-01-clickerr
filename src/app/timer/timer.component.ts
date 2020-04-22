@@ -22,13 +22,11 @@ export class TimerComponent implements OnInit {
   countdown(): any {
     return setInterval(() => {
       // TODO: for hard mode, change clicker-button styling every second
-
       if (this.timer > 1) {
         this.timer--;
       } else {
         this.stopTimer();
         this.stopGame.emit();
-        // TODO: initialize result-view
       }
     }, 1000);
   }

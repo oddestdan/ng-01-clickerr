@@ -1,13 +1,13 @@
 <div class="game">
   <div class="game__wrapper" *ngIf="!hasStarted">
     <div class="game__count">
-      Your click count ...
+      (Clicks will appear here)
     </div>
     <button class="game__action game__starter" (click)="handleStartGameClick()">
       start!
     </button>
     <div class="game__timer-wrapper">
-      <span class="game__timer-choose">Your timer ...</span>
+      <span class="game__timer-choose">Select your timer</span>
       <select
         class="game__timer-select timer-select"
         name="timer"

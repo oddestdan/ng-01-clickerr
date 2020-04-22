@@ -5,11 +5,15 @@
   </p>
   <p class="result__info">
     You managed to click {{ count }} times in {{ timer }} seconds. So, your
-    <b>CPS</b> (Click per Second) is <b>{{ (count / timer).toFixed(2) }}</b>
+    <b>CPS</b> (Click per Second) is
+    <b>{{ count / timer | number: "1.1-2" }}</b>
   </p>
   <p class="result__info">
     {{ criteriaMessage }}
   </p>
+  <div class="result__separator">
+    <app-separator></app-separator>
+  </div>
   <app-action-button
     class="result__again"
     [value]="'Yup.'"

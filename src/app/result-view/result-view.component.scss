@@ -7,29 +7,27 @@
     padding: 1rem 0;
   }
   &__info-text {
-    opacity: 0;
     @include fadein(1s, 0.5s);
   }
   &__username {
     font-weight: bold;
-    color: $app-orange;
+    color: $app-primary;
 
-    opacity: 0;
     @include fadein(1s, 1.2s);
   }
   &__info:nth-child(2) {
-    opacity: 0;
-    @include fadein(0.7s, 2.3s);
+    @include fadein(0.7s, 1.9s);
   }
   &__info:nth-child(3) {
-    opacity: 0;
+    @include fadein(0.7s, 3.5s);
+  }
+  &__separator {
     @include fadein(0.7s, 4.5s);
   }
   &__again {
     width: 100%;
     display: flex;
     justify-content: center;
-    opacity: 0;
-    @include fadein(0.7s, 5.7s);
+    @include fadein(0.7s, 4.7s);
   }
 }

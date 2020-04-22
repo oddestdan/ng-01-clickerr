@@ -5,14 +5,14 @@
     font-size: 8rem;
     margin: 0;
   }
-  &__message {
-    font-size: 2rem;
+  &__paragraph {
+    font-size: 1.25rem;
+    margin: 1rem 0;
   }
   &__link {
-    font-size: 2rem;
-    color: $app-orange;
+    color: $app-primary;
     &:hover {
-      color: $app-orangedark;
+      color: $app-primary-dark;
     }
   }
 }
