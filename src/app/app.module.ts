@@ -12,8 +12,8 @@ import { TimerComponent } from './timer/timer.component';
 import { AboutViewComponent } from './about-view/about-view.component';
 import { ActionButtonComponent } from './components/action-button/action-button.component';
 import { CustomInputComponent } from './components/custom-input/custom-input.component';
+import { SeparatorComponent } from './components/separator/separator.component';
 import { NotFoundViewComponent } from './not-found-view/not-found-view.component';
-import { SeparatorComponent } from './separator/separator.component';
 
 @NgModule({
   declarations: [
